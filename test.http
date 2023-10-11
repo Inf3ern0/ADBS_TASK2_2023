@@ -1,0 +1,45 @@
+###  Registration
+POST https://localhost:3000/api/users/signup HTTP/1.1
+content-type: application/json
+
+{
+    "first_name":"testFName",
+    "surname":"testSurname",
+    "username":"testName",
+    "password":"tpassword",
+    "email":"test@gmail.com"
+}
+
+
+###  Login
+POST https://localhost:3000/api/users/login HTTP/1.1
+content-type: application/json
+
+{
+        "username":"testName",
+        "password":"tpassword"
+ 
+}
+
+###  Post
+POST https://localhost:3000/api/posts HTTP/1.1
+content-type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3ROYW1lIiwidXNlcmlkIjoiNjUyNjZmNGM2MTQ3YWJlMGQ3YTJjZTBhIiwiaWF0IjoxNjk3MDE3ODU3LCJleHAiOjE2OTcwMjE0NTd9.2t4Q4civf5x7ZZcdqFZppdQzlDqSYp0LqStRrgrCqrs
+
+{
+ "department": "Sanitation",
+ "location": "Cape Town",
+ "complaint":"Sewer not working in sector 6 sub section C"
+
+}
+
+### Delete Post
+
+DELETE https://localhost:3000/api/posts/6526709b0bc7f601eb8cd2b2 HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3ROYW1lIiwidXNlcmlkIjoiNjUyNjZmNGM2MTQ3YWJlMGQ3YTJjZTBhIiwiaWF0IjoxNjk3MDE3ODU3LCJleHAiOjE2OTcwMjE0NTd9.2t4Q4civf5x7ZZcdqFZppdQzlDqSYp0LqStRrgrCqrs
+
+
+### Get Posts
+
+GET https://localhost:3000/api/posts HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3ROYW1lIiwidXNlcmlkIjoiNjUyNjZmNGM2MTQ3YWJlMGQ3YTJjZTBhIiwiaWF0IjoxNjk3MDE3ODU3LCJleHAiOjE2OTcwMjE0NTd9.2t4Q4civf5x7ZZcdqFZppdQzlDqSYp0LqStRrgrCqrs
