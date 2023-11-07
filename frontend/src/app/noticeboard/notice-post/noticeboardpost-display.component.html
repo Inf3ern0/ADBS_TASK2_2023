@@ -1,0 +1,28 @@
+<ul>
+    <li *ngFor="let post of postList.posts" >
+       <h4> Department: {{post['department']}} | Location: {{post['location']}}</h4>
+        <p>Complaint: {{post['complaint']}}</p>
+        <button (click)="deletePost(post['_id'])">Delete complaint</button>
+    </li>
+</ul>
+
+<form [formGroup]="complaintForm" (ngSubmit)="onSubmit()">
+    <label for="department">Department</label>
+    <input type="text" name="department" id="department" formControlName="department">
+    <label for="location">Location</label>
+    <input type="text" name="location" id="location" formControlName="location">
+    <label for="complaint">Complaint</label>
+    <input type="text" name="complaint" id="complaint" formControlName="complaint">
+    <button>Create complaint</button>
+</form>
+
+<style>
+    li * {
+        margin: 0;
+        padding: 0;
+    }
+
+    form {
+        display: grid;
+    }
+</style>

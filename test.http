@@ -1,5 +1,5 @@
 ###  Registration
-POST https://localhost:3000/api/users/signup HTTP/1.1
+POST http://localhost:3000/api/users/signup HTTP/1.1
 content-type: application/json
 
 {
@@ -12,7 +12,7 @@ content-type: application/json
 
 
 ###  Login
-POST https://localhost:3000/api/users/login HTTP/1.1
+POST http://localhost:3000/api/users/login HTTP/1.1
 content-type: application/json
 
 {
@@ -22,9 +22,9 @@ content-type: application/json
 }
 
 ###  Post
-POST https://localhost:3000/api/posts HTTP/1.1
+POST http://localhost:3000/api/posts HTTP/1.1
 content-type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3ROYW1lIiwidXNlcmlkIjoiNjUyNjZmNGM2MTQ3YWJlMGQ3YTJjZTBhIiwiaWF0IjoxNjk3MDE3ODU3LCJleHAiOjE2OTcwMjE0NTd9.2t4Q4civf5x7ZZcdqFZppdQzlDqSYp0LqStRrgrCqrs
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3ROYW1lIiwidXNlcmlkIjoiNjUyNjZmNGM2MTQ3YWJlMGQ3YTJjZTBhIiwiaWF0IjoxNjk5Mzc2ODU2LCJleHAiOjE2OTkzODA0NTZ9.uC_IzqvHwcUHlK45q_Lxsk1ppjg3i26ah_nHozW52FM
 
 {
  "department": "Sanitation",

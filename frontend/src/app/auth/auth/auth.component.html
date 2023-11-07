@@ -1,0 +1,47 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <label for="username">Username</label>
+  <input type="text" name="username" id="username" formControlName="username" />
+  <label for="password">Password</label>
+  <input
+    type="password"
+    name="password"
+    id="password"
+    formControlName="password"
+  />
+  <button>Login</button>
+</form>
+
+<form [formGroup]="registerForm" (ngSubmit)="register()">
+  <label for="username">Username</label>
+  <input type="text" name="username" id="username" formControlName="username" />
+  <label for="firstName">firstName</label>
+  <input
+    type="text"
+    name="firstName"
+    id="firstName"
+    formControlName="firstName"
+  />
+  <label for="surname">surname</label>
+  <input type="text" name="surname" id="surname" formControlName="surname" />
+  <label for="email">email</label>
+  <input type="email" name="email" id="email" formControlName="email" />
+  <label for="password">Password</label>
+  <input
+    type="password"
+    name="password"
+    id="password"
+    formControlName="password"
+  />
+  <button>Login</button>
+</form>
+
+<style>
+  li * {
+    margin: 0;
+    padding: 0;
+  }
+
+  form {
+    display: grid;
+  }
+</style>

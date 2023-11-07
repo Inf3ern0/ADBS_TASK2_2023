@@ -4,7 +4,7 @@ const urlprefix = '/api'
 const mongoose = require('mongoose')
 const Post = require('./Models/bpost')
 const fs = require('fs');
-const cert = fs.readFileSync('Keys/certificate.pem');
+const cert = fs.readFileSync('Keys/certificate.crt');
 
 require('dotenv').config()
 
