@@ -20,7 +20,9 @@ export class UserService {
 
   private token = new BehaviorSubject<string | undefined>(undefined);
 
-  public getToken = this.token.value;
+  public get getToken() {
+    return this.token.value;
+  }
 
   public login(username: string, password: string) {
     return this.http

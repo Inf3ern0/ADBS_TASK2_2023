@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { PostsService } from '../../services/posts.service';
 import { Subscription } from 'rxjs';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 type Posts = {
   message: string;
@@ -14,7 +15,7 @@ type Posts = {
   styleUrls: ['./noticeboardpost-display.component.sass'],
 })
 export class NoticeboardpostDisplayComponent implements OnInit {
-  constructor(public posts: PostsService) {}
+  constructor(public posts: PostsService, private router: Router) {}
 
   public postList!: Posts;
   public postSub!: Subscription;
@@ -26,10 +27,15 @@ export class NoticeboardpostDisplayComponent implements OnInit {
   });
 
   private getPosts() {
-    const sub = this.posts.getPosts().subscribe((res) => {
-      this.postList = res;
-      sub.unsubscribe();
-    });
+    const sub = this.posts.getPosts().subscribe(
+      (res) => {
+        this.postList = res;
+        sub.unsubscribe();
+      },
+      (error) => {
+        if (error.status === 401) this.router.navigateByUrl('auth');
+      }
+    );
   }
 
   ngOnInit() {
@@ -37,14 +43,17 @@ export class NoticeboardpostDisplayComponent implements OnInit {
   }
 
   onSubmit() {
-    console.warn(this.complaintForm.value);
     const { complaint, department, location } = this.complaintForm.value;
 
     if (!complaint || !department || !location) return;
 
-    this.posts.createPost(department, location, complaint).subscribe(() => {
-      this.getPosts();
-    });
+    const sub = this.posts
+      .createPost(department, location, complaint)
+      .subscribe(() => {
+        this.getPosts();
+        this.complaintForm.reset();
+        sub.unsubscribe();
+      });
   }
 
   public deletePost(postId: string) {

@@ -17,21 +17,28 @@ export class AuthComponent {
   });
 
   public registerForm = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
+    registerUsername: new FormControl(''),
+    registerPassword: new FormControl(''),
     firstName: new FormControl(''),
     surname: new FormControl(''),
     email: new FormControl(''),
   });
 
   public register() {
-    const { password, username, firstName, surname, email } =
+    const { registerPassword, registerUsername, firstName, surname, email } =
       this.registerForm.value;
 
-    if (!username || !password || !email || !firstName || !surname) return;
+    if (
+      !registerUsername ||
+      !registerPassword ||
+      !email ||
+      !firstName ||
+      !surname
+    )
+      return;
 
     const sub = this.user
-      .register(username, password, email, firstName, surname)
+      .register(registerUsername, registerPassword, email, firstName, surname)
       .subscribe(
         ({ message }) => {
           alert(message);

@@ -1,19 +1,32 @@
 <form [formGroup]="loginForm" (ngSubmit)="login()">
   <label for="username">Username</label>
-  <input type="text" name="username" id="username" formControlName="username" />
+  <input
+    type="text"
+    name="username"
+    id="username"
+    formControlName="username"
+    required
+  />
   <label for="password">Password</label>
   <input
     type="password"
     name="password"
     id="password"
     formControlName="password"
+    required
   />
   <button>Login</button>
 </form>
 
 <form [formGroup]="registerForm" (ngSubmit)="register()">
-  <label for="username">Username</label>
-  <input type="text" name="username" id="username" formControlName="username" />
+  <label for="registerUsername">Username</label>
+  <input
+    type="text"
+    name="registerUsername"
+    id="registerUsername"
+    formControlName="registerUsername"
+    required
+  />
   <label for="firstName">firstName</label>
   <input
     type="text"
@@ -22,15 +35,28 @@
     formControlName="firstName"
   />
   <label for="surname">surname</label>
-  <input type="text" name="surname" id="surname" formControlName="surname" />
+  <input
+    type="text"
+    name="surname"
+    id="surname"
+    formControlName="surname"
+    required
+  />
   <label for="email">email</label>
-  <input type="email" name="email" id="email" formControlName="email" />
+  <input
+    type="email"
+    name="email"
+    id="email"
+    formControlName="email"
+    required
+  />
   <label for="password">Password</label>
   <input
     type="password"
-    name="password"
-    id="password"
-    formControlName="password"
+    name="registerPassword"
+    id="registerPassword"
+    formControlName="registerPassword"
+    required
   />
   <button>Login</button>
 </form>
