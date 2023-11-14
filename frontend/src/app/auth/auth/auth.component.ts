@@ -58,7 +58,7 @@ export class AuthComponent {
 
     const sub = this.user.login(username, password).subscribe(
       () => {
-        this.router.navigateByUrl('complaints');
+        this.router.navigateByUrl('');
         sub.unsubscribe();
       },
       () => {
